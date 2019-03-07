@@ -1,3 +1,5 @@
+$placeholder-color: #333;
+
 html {
     color: #222;
     font-size: 1em;
@@ -13,6 +15,22 @@ html {
 ::selection {
     background: #b3d4fc;
     text-shadow: none;
+}
+
+::-webkit-input-placeholder {
+    color: $placeholder-color;
+}
+
+::-moz-placeholder {
+    color: $placeholder-color;
+}
+
+:-moz-placeholder {
+    color: $placeholder-color;
+}
+
+:-ms-input-placeholder {
+    color: $placeholder-color;
 }
 
 
