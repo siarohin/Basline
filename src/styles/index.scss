@@ -15,12 +15,81 @@ h2 {
   font-size: 1.5rem;
 }
 
+@mixin button-reset {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+@mixin input-reset {
+  border: none;
+  background: none;
+  outline: none;
+  padding: 0;
+}
+
 .container {
   margin: 0 auto;
 }
 
 .wrapper {
   margin: 4rem 4rem 3rem;
+}
+
+.on-main-page {
+  position: relative;
+}
+
+.logotype {
+  background: url('../images/logo.png') no-repeat 0 0;
+  position: absolute;
+  height: 128px;
+  width: 128px;
+  left: -3rem;
+  top: -1rem;
+  z-index: 1;
+  font-size: 0;
+}
+
+.navigation {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  .navigation-menu {
+    background: url('../images/burger.png');
+    font-size: 0;
+    width: 32px;
+    height: 26px;
+    display: block;
+    margin-right: 0.5rem;
+  }
+}
+
+.pagination-container {
+  position: absolute;
+  top: 0;
+  right: 17.5%;
+  z-index: 1;
+
+  .pagination-item {
+    @include button-reset;
+    width: 72px;
+    height: 34px;
+    border: 1px solid #ff6e20;
+    border-bottom: none;
+    box-sizing: border-box;
+    margin: 0 0.8rem;
+    font-size: 1.4em;
+  }
+
+  .active-item {
+    border-width: 2px;
+    border-bottom: 2px solid #fff;
+  }
 }
 
 .content-area__wrapper {
@@ -34,6 +103,7 @@ h2 {
     box-sizing: border-box;
     height: 100%;
     overflow: hidden;
+    position: relative;
 
     .content-form__inner {
       width: 50%;
@@ -43,7 +113,8 @@ h2 {
 }
 
 .first-step {
-  background: #ff6e20 url('../images/first-step.jpg') no-repeat center center;
+  background: #ff6e20 url('../images/first-step.svg') no-repeat center center;
+  background-size: cover;
 }
 
 .content-data {
@@ -71,22 +142,6 @@ h2 {
   }
 }
 
-@mixin button-reset {
-  padding: 0;
-  border: none;
-  font: inherit;
-  color: inherit;
-  background-color: transparent;
-  cursor: pointer;
-}
-
-@mixin input-reset {
-  border:none;
-  background:none;
-  outline:none;
-  padding:0;
-}
-
 .custom-button {
   @include button-reset;
   background: #ff6e20;
@@ -95,6 +150,29 @@ h2 {
   font-size: 1.5em;
   font-weight: 900;
   margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow-button {
+  width: 60px;
+  margin-left: 0.6em;
+  height: 1px;
+  background: #000;
+  display: flex;
+  align-items: center;
+}
+
+.arrow-button::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  position: relative;
+  left: 53px;
+  transform: rotate(45deg);
+  border-top: 1px solid #000;
+  border-right: 1px solid #000;
 }
 
 .custom-input {
@@ -215,6 +293,8 @@ h2 {
     text-align: center;
   }
 }
+
+
 
 
 
