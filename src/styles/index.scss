@@ -1,6 +1,20 @@
 $font-family: 'Roboto', sans-serif;
 $font-size: 16px;
 
+
+/* Color scheme ============= */
+
+$orange: #ff6e20;
+$white: #fff;
+$magenta: #eb5757;
+$light-magenta: #ffb78f;
+$black: #000;
+$gray: #333;
+$light-gray: #c4c4c4;
+
+
+/* Core styles ============= */
+
 body {
   font-family: $font-family;
   font-size: $font-size;
@@ -31,10 +45,6 @@ h2 {
   padding: 0;
 }
 
-.container {
-  margin: 0 auto;
-}
-
 .wrapper {
   margin: 4rem 4rem 3rem;
 }
@@ -42,6 +52,9 @@ h2 {
 .on-main-page {
   position: relative;
 }
+
+
+/* Header styles ============= */
 
 .logotype {
   background: url('../images/logo.png') no-repeat 0 0;
@@ -69,6 +82,9 @@ h2 {
   }
 }
 
+
+/* Pagination styles ============= */
+
 .pagination-container {
   position: absolute;
   top: 0;
@@ -79,7 +95,7 @@ h2 {
     @include button-reset;
     width: 72px;
     height: 34px;
-    border: 1px solid #ff6e20;
+    border: 1px solid $orange;
     border-bottom: none;
     box-sizing: border-box;
     margin: 0 0.8rem;
@@ -88,9 +104,12 @@ h2 {
 
   .active-item {
     border-width: 2px;
-    border-bottom: 2px solid #fff;
+    border-bottom: 2px solid $white;
   }
 }
+
+
+/* Form styles ============= */
 
 .content-area__wrapper {
   height: calc(100vh - 9rem);
@@ -98,11 +117,10 @@ h2 {
 
   .content-form {
     display: flex;
-    border: 2px solid #ff6e20;
+    border: 2px solid $orange;
     border-radius: 3em 0;
     box-sizing: border-box;
     height: 100%;
-    // overflow: hidden;
     position: relative;
 
     .content-form__inner {
@@ -117,12 +135,12 @@ h2 {
     right: -1.5rem;
     transform: rotate(90deg);
     height: 300px;
-    color: #eb5757;
+    color: $magenta;
   }
 }
 
 .content-image {
-  background: #ff6e20 url('../images/first-step.svg') no-repeat center center;
+  background: $orange url('../images/first-step.svg') no-repeat center center;
   background-size: cover;
 }
 
@@ -135,7 +153,7 @@ h2 {
 .content-form__title {
   margin: 17.5% 1em 0 1em;
   display: block;
-  color: #fff;
+  color: $white;
   font-size: 2em;
   font-weight: 700;
   line-height: 1.125em;
@@ -151,11 +169,14 @@ h2 {
   }
 }
 
+
+/* <!-- Custom button --> */
+
 .custom-button {
   @include button-reset;
-  background: #ff6e20;
+  background: $orange;
   height: 3.5rem;
-  color: #fff;
+  color: $white;
   font-size: 1.5em;
   font-weight: 900;
   margin-top: 1rem;
@@ -168,7 +189,7 @@ h2 {
   width: 60px;
   margin-left: 0.6em;
   height: 1px;
-  background: #000;
+  background: $black;
   display: flex;
   align-items: center;
 }
@@ -180,18 +201,18 @@ h2 {
   position: relative;
   left: 53px;
   transform: rotate(45deg);
-  border-top: 1px solid #000;
-  border-right: 1px solid #000;
+  border-top: 1px solid $black;
+  border-right: 1px solid $black;
 }
 
 .custom-input {
   @include input-reset;
   height: 2.5rem;
   font-size: 1em;
-  color: #333;
+  color: $gray;
   padding-left: 1em;
   margin-bottom: 2em;
-  background: #ffb78f;
+  background: $light-magenta;
 }
 
 .radio-section {
@@ -206,7 +227,7 @@ h2 {
 }
 
 
-/* Radio Buttons ============= */
+/* <!-- Radio Buttons Section --> */
 
 .radio-form:checked,
 .radio-form:not(:checked) {
@@ -221,7 +242,7 @@ h2 {
     cursor: pointer;
     line-height: 26px;
     display: inline-block;
-    color: #333;
+    color: $gray;
 }
 
 .radio-form:checked + label:before,
@@ -232,9 +253,9 @@ h2 {
     top: 0;
     width: 24px;
     height: 24px;
-    border: 1px solid #c4c4c4;
+    border: 1px solid $light-gray;
     border-radius: 100%;
-    background: #c4c4c4;
+    background:$light-gray;
 }
 
 .radio-form:checked + label:after,
@@ -242,7 +263,7 @@ h2 {
     content: '';
     width: 16px;
     height: 16px;
-    background: #ffb78f;
+    background: $light-magenta;
     position: absolute;
     top: 5px;
     left: 5px;
@@ -268,9 +289,9 @@ h2 {
 }
 
 
-/* Access Section ============= */
+/* <!-- Agreement Section --> */
 
-.access-section {
+.agreement-section {
   display: flex;
   align-items: center;
   height: 3rem;
@@ -291,14 +312,14 @@ h2 {
     height: 1rem;
     width: 1rem;
     position: absolute;
-    background: #c4c4c4;
+    background: $light-gray;
     left:0;
   }
 
   input[type=checkbox]:checked + label:before {
     content: "\2713";
     font-size: 1em;
-    color: #ffb78f;
+    color: $light-magenta;
     text-align: center;
   }
 }
