@@ -102,7 +102,7 @@ h2 {
     border-radius: 3em 0;
     box-sizing: border-box;
     height: 100%;
-    overflow: hidden;
+    // overflow: hidden;
     position: relative;
 
     .content-form__inner {
@@ -110,9 +110,18 @@ h2 {
       text-align: center;
     }
   }
+
+  .content-form::after {
+    content: 'Все поля обязательны для заполнения';
+    position: absolute;
+    right: -1.5rem;
+    transform: rotate(90deg);
+    height: 300px;
+    color: #eb5757;
+  }
 }
 
-.first-step {
+.content-image {
   background: #ff6e20 url('../images/first-step.svg') no-repeat center center;
   background-size: cover;
 }
@@ -293,7 +302,6 @@ h2 {
     text-align: center;
   }
 }
-
 
 
 
