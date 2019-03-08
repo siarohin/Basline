@@ -14,7 +14,7 @@ export default class ThirdScreen {
     body.classList.add('color-scheme_third');
 
     const wrapper = document.querySelector('.content-area__wrapper');
-    wrapper.insertAdjacentHTML('beforeend', template);
+    wrapper.innerHTML = template;
   }
 
 

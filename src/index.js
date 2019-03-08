@@ -6,6 +6,15 @@ import FirstScreen from './screens/first';
 import SecondScreen from './screens/second';
 import ThirdScreen from './screens/third';
 
-window.onload = () => {
+import addNavigation from './components/navigation';
+
+
+const startApp = async () => {
+  await addNavigation();
   FirstScreen.init();
+};
+
+
+window.onload = () => {
+  startApp();
 };

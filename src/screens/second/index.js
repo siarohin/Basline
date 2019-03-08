@@ -14,7 +14,7 @@ export default class SecondScreen {
     body.classList.add('color-scheme_second');
 
     const wrapper = document.querySelector('.content-area__wrapper');
-    wrapper.insertAdjacentHTML('beforeend', template);
+    wrapper.innerHTML = template;
   }
 
 

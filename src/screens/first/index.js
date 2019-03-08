@@ -15,7 +15,7 @@ export default class FirstScreen {
     body.classList.add('color-scheme_first');
 
     const wrapper = document.querySelector('.content-area__wrapper');
-    wrapper.insertAdjacentHTML('beforeend', template);
+    wrapper.innerHTML = template;
   }
 
 
