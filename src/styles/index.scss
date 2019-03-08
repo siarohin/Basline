@@ -4,17 +4,11 @@ $font-size: 16px;
 
 /* Color ============= */
 
-$orange: #ff6e20;
 $white: #fff;
 $magenta: #eb5757;
-$light-magenta: #ffb78f;
 $black: #000;
 $gray: #333;
 $light-gray: #c4c4c4;
-$gold: #d77b00;
-$light-gold: #ebbd80;
-$red: #e93a29;
-$light-red: #f39b93;
 
 
 /* Core styles ============= */
@@ -25,12 +19,9 @@ body {
   min-width: 1070px;
 }
 
-h1 {
-  font-size: 2rem;
-}
-
+h1,
 h2 {
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 @mixin button-reset {
@@ -55,6 +46,10 @@ h2 {
 
 .on-main-page {
   position: relative;
+}
+
+.hidden {
+  display: none;
 }
 
 
@@ -162,6 +157,7 @@ h2 {
 
 .form-area {
   margin: 0 4rem 0 6rem;
+  width: 100%;
 
   input[type=text],
   button {
@@ -320,101 +316,6 @@ h2 {
     text-align: center;
   }
 }
-
-
-/* Color scheme ============= */
-
-/* <!-- First Color Scheme --> */
-.color-scheme_first {
-  .pagination-item {
-    border: 1px solid $orange;
-  }
-
-  .content-form {
-    border: 2px solid $orange;
-  }
-
-  .content-image {
-    background: $orange url('../images/first-scheme.svg') no-repeat;
-  }
-
-  .custom-button {
-    background: $orange;
-  }
-
-  .custom-input,
-  .radio-form:checked + label:after,
-  .radio-form:not(:checked) + label:after {
-    background: $light-magenta;
-  }
-
-  input[type=checkbox]:checked + label:before {
-    color: $light-magenta;
-  }
-}
-
-
-/* <!-- Second Color Scheme --> */
-.color-scheme_second {
-  .pagination-item {
-    border: 1px solid $gold;
-  }
-
-  .content-form {
-    border: 2px solid $gold;
-  }
-
-  .content-image {
-    background: $gold url('../images/second-scheme.svg') no-repeat;
-  }
-
-  .custom-button {
-    background: $gold;
-  }
-
-  .custom-input,
-  .radio-form:checked + label:after,
-  .radio-form:not(:checked) + label:after {
-    background: $light-gold;
-  }
-
-  input[type=checkbox]:checked + label:before {
-    color: $light-gold;
-  }
-}
-
-
-/* <!-- Third Color Scheme --> */
-.color-scheme_third {
-  .pagination-item {
-    border: 1px solid $red;
-  }
-
-  .content-form {
-    border: 2px solid $red;
-  }
-
-  .content-image {
-    background: $red url('../images/third-scheme.svg') no-repeat;
-  }
-
-  .custom-button {
-    background: $red;
-  }
-
-  .custom-input,
-  .radio-form:checked + label:after,
-  .radio-form:not(:checked) + label:after {
-    background: $light-red;
-  }
-
-  input[type=checkbox]:checked + label:before {
-    color: $light-red;
-  }
-}
-
-
-
 
 
 

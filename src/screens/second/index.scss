@@ -1,0 +1,35 @@
+/* Settings ============= */
+
+$gold: #d77b00;
+$light-gold: #ebbd80;
+
+
+/* Color scheme ============= */
+
+.color-scheme_second {
+  .pagination-item {
+    border: 1px solid $gold;
+  }
+
+  .content-form {
+    border: 2px solid $gold;
+  }
+
+  .content-image {
+    background: $gold url('../../images/second-scheme.svg') no-repeat bottom center;
+  }
+
+  .custom-button {
+    background: $gold;
+  }
+
+  .custom-input,
+  .radio-form:checked + label:after,
+  .radio-form:not(:checked) + label:after {
+    background: $light-gold;
+  }
+
+  input[type=checkbox]:checked + label:before {
+    color: $light-gold;
+  }
+}

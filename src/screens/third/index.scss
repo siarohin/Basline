@@ -1,0 +1,69 @@
+/* Settings ============= */
+
+$red: #e93a29;
+$light-red: #f39b93;
+$black: #000;
+
+/* Core styles ============= */
+.form-area__text {
+  font-size: 1.5em;
+  margin: 0;
+
+  span {
+    font-weight: 700;
+  }
+
+  span:after {
+    content: '';
+    display: block;
+  }
+}
+
+.text-normal {
+  font-size: 1em;
+  margin: 0.5rem 0 2rem;
+}
+
+.custom-button_text {
+  font-size: 1em;
+  color: $black;
+  height: 0.5rem;
+  font-weight: 400;
+  width: auto !important;
+  margin: 0.5rem auto 0;
+}
+
+
+/* Color scheme ============= */
+
+.color-scheme_third {
+  .pagination-item {
+    border: 1px solid $red;
+  }
+
+  .content-form {
+    border: 2px solid $red;
+  }
+
+  .content-image {
+    background: $red url('../../images/third-scheme.svg') no-repeat bottom center;
+  }
+
+  .custom-button {
+    background: $red;
+  }
+
+  .custom-button_text {
+    background: none;
+  }
+
+  .custom-input,
+  .radio-form:checked + label:after,
+  .radio-form:not(:checked) + label:after {
+    background: $light-red;
+  }
+
+  input[type=checkbox]:checked + label:before {
+    color: $light-red;
+  }
+}

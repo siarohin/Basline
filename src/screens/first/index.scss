@@ -1,0 +1,35 @@
+/* Settings ============= */
+
+$orange: #ff6e20;
+$light-magenta: #ffb78f;
+
+
+/* Color scheme ============= */
+
+.color-scheme_first {
+  .pagination-item {
+    border: 1px solid $orange;
+  }
+
+  .content-form {
+    border: 2px solid $orange;
+  }
+
+  .content-image {
+    background: $orange url('../../images/first-scheme.svg') no-repeat bottom center;
+  }
+
+  .custom-button {
+    background: $orange;
+  }
+
+  .custom-input,
+  .radio-form:checked + label:after,
+  .radio-form:not(:checked) + label:after {
+    background: $light-magenta;
+  }
+
+  input[type=checkbox]:checked + label:before {
+    color: $light-magenta;
+  }
+}
