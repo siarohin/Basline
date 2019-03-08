@@ -2,7 +2,7 @@ $font-family: 'Roboto', sans-serif;
 $font-size: 16px;
 
 
-/* Color scheme ============= */
+/* Color ============= */
 
 $orange: #ff6e20;
 $white: #fff;
@@ -11,6 +11,10 @@ $light-magenta: #ffb78f;
 $black: #000;
 $gray: #333;
 $light-gray: #c4c4c4;
+$gold: #d77b00;
+$light-gold: #ebbd80;
+$red: #e93a29;
+$light-red: #f39b93;
 
 
 /* Core styles ============= */
@@ -95,16 +99,15 @@ h2 {
     @include button-reset;
     width: 72px;
     height: 34px;
-    border: 1px solid $orange;
-    border-bottom: none;
     box-sizing: border-box;
     margin: 0 0.8rem;
     font-size: 1.4em;
+    border-bottom: none !important;
   }
 
   .active-item {
-    border-width: 2px;
-    border-bottom: 2px solid $white;
+    border-width: 2px !important;
+    border-bottom: 2px solid $white !important;
   }
 }
 
@@ -117,7 +120,6 @@ h2 {
 
   .content-form {
     display: flex;
-    border: 2px solid $orange;
     border-radius: 3em 0;
     box-sizing: border-box;
     height: 100%;
@@ -140,8 +142,7 @@ h2 {
 }
 
 .content-image {
-  background: $orange url('../images/first-step.svg') no-repeat center center;
-  background-size: cover;
+  background-size: cover !important;
 }
 
 .content-data {
@@ -174,7 +175,6 @@ h2 {
 
 .custom-button {
   @include button-reset;
-  background: $orange;
   height: 3.5rem;
   color: $white;
   font-size: 1.5em;
@@ -212,7 +212,6 @@ h2 {
   color: $gray;
   padding-left: 1em;
   margin-bottom: 2em;
-  background: $light-magenta;
 }
 
 .radio-section {
@@ -263,7 +262,6 @@ h2 {
     content: '';
     width: 16px;
     height: 16px;
-    background: $light-magenta;
     position: absolute;
     top: 5px;
     left: 5px;
@@ -319,8 +317,99 @@ h2 {
   input[type=checkbox]:checked + label:before {
     content: "\2713";
     font-size: 1em;
-    color: $light-magenta;
     text-align: center;
+  }
+}
+
+
+/* Color scheme ============= */
+
+/* <!-- First Color Scheme --> */
+.color-scheme_first {
+  .pagination-item {
+    border: 1px solid $orange;
+  }
+
+  .content-form {
+    border: 2px solid $orange;
+  }
+
+  .content-image {
+    background: $orange url('../images/first-scheme.svg') no-repeat center center;
+  }
+
+  .custom-button {
+    background: $orange;
+  }
+
+  .custom-input,
+  .radio-form:checked + label:after,
+  .radio-form:not(:checked) + label:after {
+    background: $light-magenta;
+  }
+
+  input[type=checkbox]:checked + label:before {
+    color: $light-magenta;
+  }
+}
+
+
+/* <!-- Second Color Scheme --> */
+.color-scheme_second {
+  .pagination-item {
+    border: 1px solid $gold;
+  }
+
+  .content-form {
+    border: 2px solid $gold;
+  }
+
+  .content-image {
+    background: $gold url('../images/second-scheme.svg') no-repeat center center;
+  }
+
+  .custom-button {
+    background: $gold;
+  }
+
+  .custom-input,
+  .radio-form:checked + label:after,
+  .radio-form:not(:checked) + label:after {
+    background: $light-gold;
+  }
+
+  input[type=checkbox]:checked + label:before {
+    color: $light-gold;
+  }
+}
+
+
+/* <!-- Third Color Scheme --> */
+.color-scheme_third {
+  .pagination-item {
+    border: 1px solid $red;
+  }
+
+  .content-form {
+    border: 2px solid $red;
+  }
+
+  .content-image {
+    background: $red url('../images/third-scheme.svg') no-repeat center center;
+  }
+
+  .custom-button {
+    background: $red;
+  }
+
+  .custom-input,
+  .radio-form:checked + label:after,
+  .radio-form:not(:checked) + label:after {
+    background: $light-red;
+  }
+
+  input[type=checkbox]:checked + label:before {
+    color: $light-red;
   }
 }
 
