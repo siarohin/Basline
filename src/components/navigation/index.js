@@ -2,6 +2,7 @@ import FirstScreen from '../../screens/first';
 import SecondScreen from '../../screens/second';
 import ThirdScreen from '../../screens/third';
 
+import './index.scss';
 import template from './index.tpl';
 
 

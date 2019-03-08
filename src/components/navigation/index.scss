@@ -1,0 +1,61 @@
+/* Settings ============= */
+$orange: #ff6e20;
+$gold: #d77b00;
+$red: #e93a29;
+$white: #fff;
+
+
+/* Pagination styles ============= */
+
+@mixin button-reset {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.pagination-container {
+  position: absolute;
+  top: 0;
+  right: 17.5%;
+  z-index: 1;
+
+  .pagination-item {
+    @include button-reset;
+    width: 72px;
+    height: 34px;
+    box-sizing: border-box;
+    margin: 0 0.8rem;
+    font-size: 1.4em;
+    border-bottom: none !important;
+    outline: none;
+  }
+
+  .active-item {
+    border-width: 2px !important;
+    border-bottom: 2px solid $white !important;
+  }
+}
+
+
+/* Color scheme ============= */
+
+.color-scheme_first {
+  .pagination-item {
+    border: 1px solid $orange;
+  }
+}
+
+.color-scheme_second {
+  .pagination-item {
+    border: 1px solid $gold;
+  }
+}
+
+.color-scheme_third {
+  .pagination-item {
+    border: 1px solid $red;
+  }
+}
