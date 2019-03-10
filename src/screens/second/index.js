@@ -1,6 +1,7 @@
 import template from './index.tpl';
 import './index.scss';
 
+import ThirdScreen from '../third';
 import isValidate from '../../components/validation';
 
 
@@ -17,6 +18,7 @@ export default class SecondScreen {
     this.setActivePage();
     this.validationForm();
     this.loadUserData();
+    this.onButtonClick();
   }
 
 
@@ -56,6 +58,38 @@ export default class SecondScreen {
 
       input.addEventListener('blur', onBlur);
     }, true);
+  }
+
+
+  static onButtonClick() {
+    const button = document.querySelector('.form-area__button');
+
+    button.addEventListener('click', (e) => {
+      e.preventDefault();
+      const inputs = document.querySelectorAll('INPUT');
+
+      const onFocusAll = () => {
+        [].forEach.call(inputs, async (input) => {
+          await input.focus();
+          await input.blur();
+        });
+      };
+
+      const isHasErrors = () => {
+        const errors = document.querySelectorAll('.error-label');
+        return errors.length;
+      };
+
+      const isCompleted = async () => {
+        await onFocusAll();
+        const countOfErrors = await isHasErrors();
+        if (countOfErrors === 0) {
+          ThirdScreen.init();
+        }
+      };
+
+      isCompleted();
+    });
   }
 
 
