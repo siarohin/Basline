@@ -6,7 +6,7 @@ export default `<section class="content-form">
 
 <div class="content-form__inner content-data">
   <article class="form-area">
-    <input class="custom-input" type="tel" placeholder="Телефон">
+    <input class="custom-input" type="tel" data-name="phone" placeholder="Телефон">
     <input class="custom-input" type="email" data-name="email" placeholder="Email">
     <div class="password">
       <input class="custom-input" type="password" data-name="password" placeholder="Пароль">

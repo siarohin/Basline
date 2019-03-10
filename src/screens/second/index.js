@@ -1,6 +1,7 @@
 import template from './index.tpl';
 import './index.scss';
 
+import SETTINGS from '../../settings';
 import ThirdScreen from '../third';
 import isValidate from '../../components/validation';
 
@@ -11,6 +12,7 @@ const saveDataToLocalStorage = (field, value) => {
   const userData = Object.assign({}, getDataFromLocalStorage(), { [field]: value });
   localStorage.setItem('user-data', JSON.stringify(userData));
 };
+
 
 export default class SecondScreen {
   static init() {
@@ -43,16 +45,48 @@ export default class SecondScreen {
 
   static validationForm() {
     const form = document.querySelector('.form-area');
+    const { phone } = SETTINGS;
 
     form.addEventListener('focus', (e) => {
       const input = e.target;
       const dataName = input.dataset.name;
+
+      const addMaskTo = (event) => {
+        event.preventDefault();
+        if (event.code.includes('Digit') && (!event.shiftKey)) {
+          input.value += event.key;
+        }
+
+        switch (input.value.length) {
+          case 1:
+            input.value = `+375 ${input.value}`;
+            break;
+          case 4:
+            input.value += ' ';
+            break;
+          case 7:
+            input.value += ' ';
+            break;
+          case 16:
+            input.value = input.value.slice(0, -1);
+            break;
+          default:
+            input.value = input.value;
+            break;
+        }
+      };
+
+      if (phone.includes(dataName)) {
+        input.placeholder = '+375 ';
+        input.addEventListener('keypress', addMaskTo);
+      }
 
       const onBlur = () => {
         if (dataName) {
           saveDataToLocalStorage(dataName, input.value);
         }
         isValidate(input, dataName);
+        input.removeEventListener('keypress', addMaskTo);
         input.removeEventListener('blur', onBlur);
       };
 
@@ -97,10 +131,14 @@ export default class SecondScreen {
     const userData = getDataFromLocalStorage();
     if (userData) {
       const {
+        phone = '',
         email = '',
         password = '',
         passwordConfirm = '',
       } = userData;
+
+      const phoneInput = document.querySelector('input[data-name=phone]');
+      phoneInput.value = phone;
 
       const emailInput = document.querySelector('input[data-name=email]');
       emailInput.value = email;

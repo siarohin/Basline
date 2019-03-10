@@ -54,7 +54,7 @@ export default class FirstScreen {
 
       const addMaskTo = (event) => {
         event.preventDefault();
-        if (event.code.includes('Digit')) {
+        if (event.code.includes('Digit') && (!event.shiftKey)) {
           input.value += event.key;
         }
 
