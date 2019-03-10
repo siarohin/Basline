@@ -7,29 +7,29 @@ html {
 }
 
 
-::-moz-selection {
+*::-moz-selection {
     background: #b3d4fc;
     text-shadow: none;
 }
 
-::selection {
+*::selection {
     background: #b3d4fc;
     text-shadow: none;
 }
 
-::-webkit-input-placeholder {
+*::-webkit-input-placeholder {
     color: $placeholder-color;
 }
 
-::-moz-placeholder {
+*:-moz-placeholder {
     color: $placeholder-color;
 }
 
-:-moz-placeholder {
+*::-moz-placeholder {
     color: $placeholder-color;
 }
 
-:-ms-input-placeholder {
+*:-ms-input-placeholder {
     color: $placeholder-color;
 }
 
@@ -110,15 +110,10 @@ textarea {
     clear: both;
 }
 
-@media only screen and (min-width: 35em) {
-
-}
-
 @media print,
     (-webkit-min-device-pixel-ratio: 1.25),
     (min-resolution: 1.25dppx),
     (min-resolution: 120dpi) {
-
 }
 
 @media print {
