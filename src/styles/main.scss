@@ -7,29 +7,31 @@ html {
 }
 
 
-*::-moz-selection {
+::-moz-selection {
     background: #b3d4fc;
     text-shadow: none;
 }
 
-*::selection {
+::selection {
     background: #b3d4fc;
     text-shadow: none;
 }
 
-*::-webkit-input-placeholder {
+::-webkit-input-placeholder {
     color: $placeholder-color;
 }
 
-*:-moz-placeholder {
+:-moz-placeholder {
     color: $placeholder-color;
+    opacity: 1;
 }
 
-*::-moz-placeholder {
+::-moz-placeholder {
     color: $placeholder-color;
+    opacity: 1;
 }
 
-*:-ms-input-placeholder {
+:-ms-input-placeholder {
     color: $placeholder-color;
 }
 
