@@ -80,7 +80,7 @@ export default class FirstScreen {
       }
 
       const onBlur = () => {
-        if (input.tagName === 'INPUT') {
+        if (dataName) {
           saveDataToLocalStorage(dataName, input.value);
         }
         isValidate(input, dataName);

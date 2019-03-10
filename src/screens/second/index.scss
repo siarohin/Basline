@@ -19,9 +19,13 @@ $light-gold: #ebbd80;
     background: $gold;
   }
 
-  .custom-input,
   .radio-form:checked + label:after,
   .radio-form:not(:checked) + label:after {
+    background: $light-gold;
+  }
+
+  .custom-input {
+    border: 2px solid $light-gold;
     background: $light-gold;
   }
 
