@@ -5,9 +5,12 @@ import SETTINGS from '../../settings';
 
 
 const reg = /[^A-zА-яЁё-\s]/;
+const emailValid = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i;
 const pattern = /^(0?[1-9]|1[0-2])\/(0?[1-9]|1[0-9]|2[0-9]|3[0-1])\/([0-9]{2})$/;
 
-const { name, birthday, errorsMessages } = SETTINGS;
+const {
+  name, birthday, email, errorsMessages,
+} = SETTINGS;
 
 const clearErrorText = (errorFields) => {
   [].map.call(errorFields, el => el.remove());
@@ -28,7 +31,13 @@ const addErrorBorder = (element) => {
 
 export default (element, dataName) => {
   const { value } = element;
-  const [errorMessageOnEmpty, errorMessageOnLength, errorMessageOnSymbols, errorMessageOnDate] = errorsMessages;
+  const [
+    errorMessageOnEmpty,
+    errorMessageOnLength,
+    errorMessageOnSymbols,
+    errorMessageOnDate,
+    errorMessageOnEmail,
+  ] = errorsMessages;
   const errorFields = document.querySelectorAll(`[data-name=${dataName}-error]`);
   let textError;
 
@@ -45,33 +54,47 @@ export default (element, dataName) => {
       break;
   }
 
+  const clearError = () => {
+    clearErrorBorder(element);
+    if (errorFields) {
+      clearErrorText(errorFields);
+    }
+  };
+
+  const addError = () => {
+    clearErrorText(errorFields);
+    addErrorBorder(element);
+  };
+
   /* <-- Name validation --> */
   if (name.includes(dataName)) {
     if (value.length > 1 && !reg.test(value)) {
-      clearErrorBorder(element);
-      if (errorFields) {
-        clearErrorText(errorFields);
-      }
+      clearError();
     } else {
-      clearErrorText(errorFields);
-      addErrorBorder(element);
+      addError();
       addErrorText(element, dataName, textError);
     }
 
   /* <-- Birthday validation --> */
   } else if (birthday.includes(dataName)) {
     if (value.length > 7 && pattern.test(value)) {
-      clearErrorBorder(element);
-      if (errorFields) {
-        clearErrorText(errorFields);
-      }
+      clearError();
     } else {
       // eslint-disable-next-line no-param-reassign
       element.placeholder = 'Дата рождения';
-      clearErrorText(errorFields);
-      addErrorBorder(element);
+      addError();
       addErrorText(element, dataName,
         value.length > 7 ? textError = errorMessageOnDate : textError = errorMessageOnEmpty);
+    }
+
+  /* <-- Email validation --> */
+  } else if (email.includes(dataName)) {
+    if (value.length > 1 && emailValid.test(value)) {
+      clearError();
+    } else {
+      addError();
+      addErrorText(element, dataName,
+        value.length > 1 ? textError = errorMessageOnEmail : textError = errorMessageOnEmpty);
     }
   }
 };
