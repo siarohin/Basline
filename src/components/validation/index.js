@@ -6,11 +6,12 @@ import SETTINGS from '../../settings';
 
 const reg = /[^A-zА-яЁё-\s]/;
 const emailValid = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i;
+const phoneValid = /^\+375 [0-9]{2} [0-9]{7}$/;
 const passValid = /[^A-zА-яЁё0-9]/;
 const pattern = /^(0?[1-9]|1[0-2])\/(0?[1-9]|1[0-9]|2[0-9]|3[0-1])\/([0-9]{2})$/;
 
 const {
-  name, birthday, email, password, errorsMessages,
+  name, birthday, phone, email, password, errorsMessages,
 } = SETTINGS;
 
 const clearErrorText = (errorFields) => {
@@ -41,6 +42,7 @@ export default (element, dataName) => {
     errorMessageOnPassword,
     errorMessageOnPasswordLenght,
     errorMessageOnConcurrence,
+    errorMessageOnPhoneNumber,
   ] = errorsMessages;
   const errorFields = document.querySelectorAll(`[data-name=${dataName}-error]`);
   let textError;
@@ -128,6 +130,18 @@ export default (element, dataName) => {
           addErrorText(el, el.dataset.name, textError = errorMessageOnConcurrence);
         });
       }
+    }
+
+  /* <-- Phone validation --> */
+  } else if (phone.includes(dataName)) {
+    if (phoneValid.test(value)) {
+      clearError();
+    } else {
+      // eslint-disable-next-line no-param-reassign
+      element.placeholder = 'Телефон';
+      addError();
+      addErrorText(element, dataName,
+        value.length > 0 ? textError = errorMessageOnPhoneNumber : textError = errorMessageOnEmpty);
     }
   }
 };

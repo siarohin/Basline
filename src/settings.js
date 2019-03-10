@@ -5,6 +5,7 @@ export default {
   sex: ['male', 'female'],
   birthday: ['birthday'],
   agreement: ['agreement'],
+  phone: ['phone'],
   email: ['email'],
   password: ['password', 'passwordConfirm'],
   errorsMessages: [
@@ -15,5 +16,6 @@ export default {
     'Это поле должно содержать email адрес',
     'Это поле должно содержать только буквы и цифры',
     'Это поле должно содержать не менее 6 символов',
-    'Пароли не совпадают'],
+    'Пароли не совпадают',
+    'Это поле задается в формате +375 ** *******'],
 };
