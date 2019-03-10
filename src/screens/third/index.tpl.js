@@ -9,18 +9,13 @@ export default `<section class="content-form">
     <p class="form-area__text">На номер <span>+375293334455</span> отправлен код подтверждения</p>
     <p class="form-area__text text-normal">Введите его в поле ниже:</p>
 
-    <form action="#">
-      <input class="custom-input" type="text" placeholder="Код">
-
-      <button type="button" class="form-area__button custom-button">
-        Присоединиться
-      </button>
-
-      <button type="button" class="form-area__button custom-button custom-button_text">
-        Отправить код еще раз
-      </button>
-    </form>
-
+    <input class="custom-input" type="text" placeholder="Код">
+    <button type="button" class="form-area__button custom-button">
+      Присоединиться
+    </button>
+    <button type="button" class="form-area__button custom-button custom-button_text">
+      Отправить код еще раз
+    </button>
   </article>
 </div>
 

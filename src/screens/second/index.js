@@ -12,7 +12,6 @@ export default class SecondScreen {
     const body = document.querySelector('body');
     body.className = '';
     body.classList.add('color-scheme_second');
-
     const wrapper = document.querySelector('.content-area__wrapper');
     wrapper.innerHTML = template;
   }
@@ -21,11 +20,9 @@ export default class SecondScreen {
   static setActivePage() {
     const navButton = document.querySelector('[data-name=scheme-second]');
     const activeButton = document.querySelector('.active-item');
-
     if (activeButton) {
       activeButton.classList.remove('active-item');
     }
-
     navButton.classList.add('active-item');
   }
 }

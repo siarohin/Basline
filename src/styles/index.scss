@@ -137,6 +137,9 @@ h2 {
   position: relative;
 
   input[type=text],
+  input[type=password],
+  input[type=tel],
+  input[type=email],
   button {
     width: 100%;
     box-sizing: border-box;
