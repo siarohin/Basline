@@ -40,6 +40,7 @@ export default (element, dataName) => {
     errorMessageOnEmail,
     errorMessageOnPassword,
     errorMessageOnPasswordLenght,
+    errorMessageOnConcurrence,
   ] = errorsMessages;
   const errorFields = document.querySelectorAll(`[data-name=${dataName}-error]`);
   let textError;
@@ -64,9 +65,9 @@ export default (element, dataName) => {
     }
   };
 
-  const addError = () => {
+  const addError = (newElement = element) => {
     clearErrorText(errorFields);
-    addErrorBorder(element);
+    addErrorBorder(newElement);
   };
 
   /* <-- Name validation --> */
@@ -111,6 +112,22 @@ export default (element, dataName) => {
       addError();
       addErrorText(element, dataName,
         value.length > 5 ? textError = errorMessageOnPassword : textError = errorMessageOnPasswordLenght);
+    }
+
+    const [passwordField, passwordConfirmField] = password;
+    const passwordFields = document.querySelectorAll('.password > input');
+    const passwordInput = [].find.call(passwordFields, el => el.dataset.name === passwordField);
+    const passwordConfirmedInput = [].find.call(passwordFields, el => el.dataset.name === passwordConfirmField);
+    const countOfElements = element.parentNode.children.length;
+    if (!!passwordConfirmedInput.value.length
+      && !!passwordInput.value.length
+      && countOfElements === passwordFields.length) {
+      if (passwordConfirmedInput.value !== passwordInput.value) {
+        [].map.call(passwordFields, (el) => {
+          addError(el);
+          addErrorText(el, el.dataset.name, textError = errorMessageOnConcurrence);
+        });
+      }
     }
   }
 };
