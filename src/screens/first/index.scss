@@ -19,9 +19,13 @@ $light-magenta: #ffb78f;
     background: $orange;
   }
 
-  .custom-input,
   .radio-form:checked + label:after,
   .radio-form:not(:checked) + label:after {
+    background: $light-magenta;
+  }
+
+  .custom-input {
+    border: 2px solid $light-magenta;
     background: $light-magenta;
   }
 

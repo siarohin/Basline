@@ -108,6 +108,7 @@ h2 {
     transform: rotate(90deg);
     height: 300px;
     color: $magenta;
+    z-index: -1;
   }
 }
 
@@ -133,6 +134,7 @@ h2 {
 .form-area {
   margin: 0 4rem 0 6rem;
   width: 100%;
+  position: relative;
 
   input[type=text],
   button {
@@ -179,6 +181,7 @@ h2 {
 .custom-input {
   @include input-reset;
   height: 2.5rem;
+  line-height: 2.5rem;
   font-size: 1em;
   color: $gray;
   padding-left: 1em;
@@ -263,7 +266,7 @@ h2 {
 .agreement-section {
   display: flex;
   align-items: center;
-  height: 3rem;
+  height: 3.5rem;
   font-size: 0.75rem;
   position: relative;
 
@@ -286,7 +289,7 @@ h2 {
   }
 
   input[type=checkbox]:checked + label:before {
-    content: "\2713";
+    content: "\2714";
     font-size: 1em;
     text-align: center;
   }

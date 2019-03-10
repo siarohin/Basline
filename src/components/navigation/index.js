@@ -1,6 +1,4 @@
 import FirstScreen from '../../screens/first';
-import SecondScreen from '../../screens/second';
-import ThirdScreen from '../../screens/third';
 
 import './index.scss';
 import template from './index.tpl';
@@ -17,19 +15,49 @@ export default () => {
       e.preventDefault();
       const button = e.target;
       const dataName = button.dataset.name;
+      const screen = document.querySelector('body').className.replace('color-scheme_', '');
+      const buttonToNextScreen = document.querySelector('.custom-button');
 
-      switch (dataName) {
-        case 'scheme-first':
-          FirstScreen.init();
-          break;
-        case 'scheme-second':
-          SecondScreen.init();
-          break;
-        case 'scheme-third':
-          ThirdScreen.init();
-          break;
-        default:
-          break;
+      if (screen === 'first') {
+        switch (dataName) {
+          case 'scheme-first':
+            break;
+          case 'scheme-second':
+            buttonToNextScreen.click();
+            break;
+          case 'scheme-third':
+            break;
+          default:
+            break;
+        }
+      }
+
+      if (screen === 'second') {
+        switch (dataName) {
+          case 'scheme-first':
+            FirstScreen.init();
+            break;
+          case 'scheme-second':
+            break;
+          case 'scheme-third':
+            buttonToNextScreen.click();
+            break;
+          default:
+            break;
+        }
+      }
+
+      if (screen === 'third') {
+        switch (dataName) {
+          case 'scheme-first':
+            break;
+          case 'scheme-second':
+            break;
+          case 'scheme-third':
+            break;
+          default:
+            break;
+        }
       }
     });
   }

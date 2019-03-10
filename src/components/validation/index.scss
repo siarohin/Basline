@@ -1,0 +1,17 @@
+/* Settings ============= */
+
+$error-color: #eb5757;
+
+
+/* Color scheme ============= */
+
+.error-value {
+  border: 2px solid $error-color !important;
+}
+
+.error-label {
+  color: $error-color;
+  font-size: 0.75em;
+  position: absolute;
+  left: 0;
+}
