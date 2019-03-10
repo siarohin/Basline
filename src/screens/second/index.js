@@ -98,10 +98,18 @@ export default class SecondScreen {
     if (userData) {
       const {
         email = '',
+        password = '',
+        passwordConfirm = '',
       } = userData;
 
       const emailInput = document.querySelector('input[data-name=email]');
       emailInput.value = email;
+
+      const passwordInput = document.querySelector('input[data-name=password]');
+      passwordInput.value = password;
+
+      const passwordConfirmInput = document.querySelector('input[data-name=passwordConfirm]');
+      passwordConfirmInput.value = passwordConfirm;
     }
   }
 }
