@@ -6,10 +6,11 @@ import SETTINGS from '../../settings';
 
 const reg = /[^A-zА-яЁё-\s]/;
 const emailValid = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i;
+const passValid = /[^A-zА-яЁё0-9]/;
 const pattern = /^(0?[1-9]|1[0-2])\/(0?[1-9]|1[0-9]|2[0-9]|3[0-1])\/([0-9]{2})$/;
 
 const {
-  name, birthday, email, errorsMessages,
+  name, birthday, email, password, errorsMessages,
 } = SETTINGS;
 
 const clearErrorText = (errorFields) => {
@@ -37,6 +38,8 @@ export default (element, dataName) => {
     errorMessageOnSymbols,
     errorMessageOnDate,
     errorMessageOnEmail,
+    errorMessageOnPassword,
+    errorMessageOnPasswordLenght,
   ] = errorsMessages;
   const errorFields = document.querySelectorAll(`[data-name=${dataName}-error]`);
   let textError;
@@ -95,6 +98,19 @@ export default (element, dataName) => {
       addError();
       addErrorText(element, dataName,
         value.length > 1 ? textError = errorMessageOnEmail : textError = errorMessageOnEmpty);
+    }
+
+  /* <-- Password validation --> */
+  } else if (password.includes(dataName)) {
+    if (value.length > 5 && !passValid.test(value)) {
+      clearError();
+    } else if (value.length === 0) {
+      addError();
+      addErrorText(element, dataName, textError = errorMessageOnEmpty);
+    } else {
+      addError();
+      addErrorText(element, dataName,
+        value.length > 5 ? textError = errorMessageOnPassword : textError = errorMessageOnPasswordLenght);
     }
   }
 };

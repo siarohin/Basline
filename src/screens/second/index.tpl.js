@@ -8,8 +8,8 @@ export default `<section class="content-form">
   <article class="form-area">
     <input class="custom-input" type="tel" placeholder="Телефон">
     <input class="custom-input" type="email" data-name="email" placeholder="Email">
-    <input class="custom-input" type="password" placeholder="Пароль">
-    <input class="custom-input" type="password" placeholder="Повторить пароль">
+    <input class="custom-input" type="password" data-name="password" placeholder="Пароль">
+    <input class="custom-input" type="password" data-name="passwordConfirm" placeholder="Повторить пароль">
     <button type="button" class="form-area__button custom-button">
       Продолжить <span class="arrow-button"></span>
     </button>
