@@ -53,9 +53,13 @@ $black: #000;
     background: none;
   }
 
-  .custom-input,
   .radio-form:checked + label:after,
   .radio-form:not(:checked) + label:after {
+    background: $light-red;
+  }
+
+  .custom-input {
+    border: 2px solid $light-red;
     background: $light-red;
   }
 

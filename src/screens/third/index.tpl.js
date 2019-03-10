@@ -6,7 +6,7 @@ export default `<section class="content-form">
 
 <div class="content-form__inner content-data">
   <article class="form-area">
-    <p class="form-area__text">На номер <span>+375293334455</span> отправлен код подтверждения</p>
+    <p data-name="phone" class="form-area__text">На номер <span></span> отправлен код подтверждения</p>
     <p class="form-area__text text-normal">Введите его в поле ниже:</p>
 
     <input class="custom-input" type="text" placeholder="Код">
