@@ -11,7 +11,7 @@ const passValid = /[^A-zА-яЁё0-9]/;
 const pattern = /^(0?[1-9]|1[0-2])\/(0?[1-9]|1[0-9]|2[0-9]|3[0-1])\/([0-9]{2})$/;
 
 const {
-  name, birthday, phone, email, password, errorsMessages,
+  name, birthday, phone, email, password, code, errorsMessages,
 } = SETTINGS;
 
 const clearErrorText = (errorFields) => {
@@ -30,6 +30,8 @@ const addErrorBorder = (element) => {
   element.classList.add('error-value');
 };
 
+const getDataFromLocalStorage = () => JSON.parse(localStorage.getItem('user-data'));
+
 
 export default (element, dataName) => {
   const { value } = element;
@@ -43,6 +45,7 @@ export default (element, dataName) => {
     errorMessageOnPasswordLenght,
     errorMessageOnConcurrence,
     errorMessageOnPhoneNumber,
+    errorMessageOnCode,
   ] = errorsMessages;
   const errorFields = document.querySelectorAll(`[data-name=${dataName}-error]`);
   let textError;
@@ -142,6 +145,16 @@ export default (element, dataName) => {
       addError();
       addErrorText(element, dataName,
         value.length > 0 ? textError = errorMessageOnPhoneNumber : textError = errorMessageOnEmpty);
+    }
+
+  /* <-- Code validation --> */
+  } else if (code.includes(dataName)) {
+    if (value === getDataFromLocalStorage().code) {
+      clearError();
+    } else {
+      addError();
+      addErrorText(element, dataName,
+        value.length > 0 ? textError = errorMessageOnCode : textError = errorMessageOnEmpty);
     }
   }
 };

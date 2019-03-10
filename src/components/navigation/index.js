@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-cycle
 import FirstScreen from '../../screens/first';
 
 import './index.scss';
