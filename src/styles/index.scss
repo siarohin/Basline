@@ -161,6 +161,14 @@ h2 {
   justify-content: center;
 }
 
+.custom-button:focus {
+  outline: none;
+}
+
+.custom-button::-moz-focus-inner {
+  border: 0;
+}
+
 .arrow-button {
   width: 60px;
   margin-left: 0.6em;
