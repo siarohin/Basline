@@ -11,6 +11,7 @@ export default () => {
 
   const navigationContainer = document.querySelector('.pagination-container');
 
+
   if (navigationContainer) {
     navigationContainer.addEventListener('click', (e) => {
       e.preventDefault();

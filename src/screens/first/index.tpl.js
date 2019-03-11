@@ -1,7 +1,7 @@
 export default `<section class="content-form">
 
 <div class="content-form__inner content-image">
-  <h1 class="content-form__title">Всего три простых шага для получения бонусов!</h1>
+  <h1 class="content-form__title">Всего три простых шага <nobr>для получения</nobr> бонусов!</h1>
 </div>
 
 <div class="content-form__inner content-data">

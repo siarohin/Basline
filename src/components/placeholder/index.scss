@@ -1,0 +1,21 @@
+.pseudo-placeholder {
+  position: absolute;
+  left: 1rem;
+  font-size: 0.6em;
+}
+
+.without-placeholder::-webkit-input-placeholder {
+  opacity: 0;
+}
+
+.without-placeholder:-moz-placeholder {
+  opacity: 0;
+}
+
+.without-placeholder::-moz-placeholder {
+  opacity: 0;
+}
+
+.without-placeholder:-ms-input-placeholder {
+  opacity: 0;
+}

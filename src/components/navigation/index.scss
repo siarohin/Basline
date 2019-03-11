@@ -36,7 +36,15 @@ $white: #fff;
 
   .active-item {
     border-width: 2px !important;
-    border-bottom: 2px solid $white !important;
+  }
+
+  .active-item:after {
+    content: '';
+    background: $white;
+    display: block;
+    $height: 0.5em;
+    height: $height;
+    margin-top: ($height/-2);
   }
 }
 

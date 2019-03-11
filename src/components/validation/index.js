@@ -4,11 +4,11 @@ import './index.scss';
 import SETTINGS from '../../settings';
 
 
-const reg = /[^A-zА-яЁё-\s]/;
+const nameValid = /[^a-zA-Zа-яёА-ЯЁ -]/u;
 const emailValid = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i;
 const phoneValid = /^\+375 [0-9]{2} [0-9]{7}$/;
 const passValid = /[^A-zА-яЁё0-9]/;
-const pattern = /^(0?[1-9]|1[0-2])\/(0?[1-9]|1[0-9]|2[0-9]|3[0-1])\/([0-9]{2})$/;
+const birthdayValid = /^(0?[1-9]|1[0-2])\/(0?[1-9]|1[0-9]|2[0-9]|3[0-1])\/([0-9]{2})$/;
 
 const {
   name, birthday, phone, email, password, code, errorsMessages,
@@ -77,7 +77,7 @@ export default (element, dataName) => {
 
   /* <-- Name validation --> */
   if (name.includes(dataName)) {
-    if (value.length > 1 && !reg.test(value)) {
+    if (value.length > 1 && !nameValid.test(value)) {
       clearError();
     } else {
       addError();
@@ -86,11 +86,10 @@ export default (element, dataName) => {
 
   /* <-- Birthday validation --> */
   } else if (birthday.includes(dataName)) {
-    if (value.length > 7 && pattern.test(value)) {
+    if (value.length > 7 && birthdayValid.test(value)) {
       clearError();
     } else {
       // eslint-disable-next-line no-param-reassign
-      element.placeholder = 'Дата рождения';
       addError();
       addErrorText(element, dataName,
         value.length > 7 ? textError = errorMessageOnDate : textError = errorMessageOnEmpty);
@@ -141,7 +140,6 @@ export default (element, dataName) => {
       clearError();
     } else {
       // eslint-disable-next-line no-param-reassign
-      element.placeholder = 'Телефон';
       addError();
       addErrorText(element, dataName,
         value.length > 0 ? textError = errorMessageOnPhoneNumber : textError = errorMessageOnEmpty);

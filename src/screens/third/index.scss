@@ -3,6 +3,7 @@
 $red: #e93a29;
 $light-red: #f39b93;
 $black: #000;
+$white: #fff;
 
 /* Core styles ============= */
 .form-area__text {
@@ -49,6 +50,17 @@ $black: #000;
     background: $red;
   }
 
+    .custom-button:not(.custom-button_text):focus {
+    background: $white;
+    border: 2px solid $red;
+    color: $red;
+  }
+
+  .custom-button:not(.custom-button_text):active {
+    background: $light-red;
+    color: $white;
+  }
+
   .custom-button_text {
     background: none;
     height: 1.5em;
@@ -62,6 +74,10 @@ $black: #000;
   .custom-input {
     border: 2px solid $light-red;
     background: $light-red;
+  }
+
+  .custom-input:focus {
+    border: 2px solid $red;
   }
 
   input[type=checkbox]:checked + label:before {

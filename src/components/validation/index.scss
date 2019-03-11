@@ -1,19 +1,23 @@
 /* Settings ============= */
 
 $error-color: #eb5757;
+$error-background: #e6dfdb !important;
 
 
 /* Color scheme ============= */
 
 .error-value {
   border: 2px solid $error-color !important;
+  background: $error-background;
 }
 
 .error-label {
+  width: 100%;
   color: $error-color;
   font-size: 0.75em;
   position: absolute;
   left: 0;
+  text-align: left;
   z-index: -1;
 }
 
@@ -21,4 +25,11 @@ $error-color: #eb5757;
   content: '';
   height: 3.5em;
   display: block;
+}
+
+.error-label::after {
+  content: url('../../images/icon-danger.png');
+  position: absolute;
+  top: 0.5em;
+  right: -3em;
 }

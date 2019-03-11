@@ -9,6 +9,7 @@ $magenta: #eb5757;
 $black: #000;
 $gray: #333;
 $light-gray: #c4c4c4;
+$light-gray-active: #e6dfdb;
 
 
 /* Core styles ============= */
@@ -50,6 +51,10 @@ h2 {
 
 .hidden {
   display: none;
+}
+
+.cursor-text {
+  cursor: text !important;
 }
 
 
@@ -197,6 +202,11 @@ h2 {
   color: $gray;
   padding-left: 1em;
   margin-bottom: 2em;
+}
+
+.custom-input_active {
+  background: $light-gray-active !important;
+  font-style: italic;
 }
 
 .radio-section {

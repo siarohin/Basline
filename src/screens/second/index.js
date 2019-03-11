@@ -2,8 +2,10 @@ import template from './index.tpl';
 import './index.scss';
 
 import SETTINGS from '../../settings';
+// eslint-disable-next-line import/no-cycle
 import ThirdScreen from '../third';
 import isValidate from '../../components/validation';
+import pseudoPlaceholder from '../../components/placeholder';
 
 
 const getDataFromLocalStorage = () => JSON.parse(localStorage.getItem('user-data'));
@@ -51,6 +53,8 @@ export default class SecondScreen {
       const input = e.target;
       const dataName = input.dataset.name;
 
+      pseudoPlaceholder(input);
+
       const addMaskTo = (event) => {
         event.preventDefault();
         if (event.code.includes('Digit') && (!event.shiftKey)) {
@@ -77,7 +81,6 @@ export default class SecondScreen {
       };
 
       if (phone.includes(dataName)) {
-        input.placeholder = '+375 ';
         input.addEventListener('keypress', addMaskTo);
       }
 

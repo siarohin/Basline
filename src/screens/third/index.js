@@ -5,6 +5,7 @@ import './index.scss';
 import startApp from '../../index';
 import isValidate from '../../components/validation';
 import pause from '../../utils';
+import pseudoPlaceholder from '../../components/placeholder';
 
 
 const getDataFromLocalStorage = () => JSON.parse(localStorage.getItem('user-data'));
@@ -59,6 +60,8 @@ export default class ThirdScreen {
     form.addEventListener('focus', (e) => {
       const input = e.target;
       const dataName = input.dataset.name;
+
+      pseudoPlaceholder(input);
 
       const onBlur = () => {
         isValidate(input, dataName);

@@ -2,6 +2,7 @@
 
 $gold: #d77b00;
 $light-gold: #ebbd80;
+$white: #fff;
 
 
 /* Color scheme ============= */
@@ -19,6 +20,17 @@ $light-gold: #ebbd80;
     background: $gold;
   }
 
+  .custom-button:focus {
+    background: $white;
+    border: 2px solid $gold;
+    color: $gold;
+  }
+
+  .custom-button:active {
+    background: $light-gold;
+    color: $white;
+  }
+
   .radio-form:checked + label:after,
   .radio-form:not(:checked) + label:after {
     background: $light-gold;
@@ -27,6 +39,10 @@ $light-gold: #ebbd80;
   .custom-input {
     border: 2px solid $light-gold;
     background: $light-gold;
+  }
+
+  .custom-input:focus {
+    border: 2px solid $gold;
   }
 
   input[type=checkbox]:checked + label:before {

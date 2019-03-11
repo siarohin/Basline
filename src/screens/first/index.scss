@@ -2,6 +2,7 @@
 
 $orange: #ff6e20;
 $light-magenta: #ffb78f;
+$white: #fff;
 
 
 /* Color scheme ============= */
@@ -19,6 +20,17 @@ $light-magenta: #ffb78f;
     background: $orange;
   }
 
+  .custom-button:focus {
+    background: $white;
+    border: 2px solid $orange;
+    color: $orange;
+  }
+
+  .custom-button:active {
+    background: $light-magenta;
+    color: $white;
+  }
+
   .radio-form:checked + label:after,
   .radio-form:not(:checked) + label:after {
     background: $light-magenta;
@@ -27,6 +39,10 @@ $light-magenta: #ffb78f;
   .custom-input {
     border: 2px solid $light-magenta;
     background: $light-magenta;
+  }
+
+  .custom-input:focus {
+    border: 2px solid $orange;
   }
 
   input[type=checkbox]:checked + label:before {

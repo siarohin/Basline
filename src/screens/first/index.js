@@ -2,8 +2,10 @@ import template from './index.tpl';
 import './index.scss';
 
 import SETTINGS from '../../settings';
+// eslint-disable-next-line import/no-cycle
 import SecondScreen from '../second';
 import isValidate from '../../components/validation';
+import pseudoPlaceholder from '../../components/placeholder';
 
 
 const getDataFromLocalStorage = () => JSON.parse(localStorage.getItem('user-data'));
@@ -52,6 +54,8 @@ export default class FirstScreen {
       const input = e.target;
       const dataName = input.dataset.name;
 
+      pseudoPlaceholder(input);
+
       const addMaskTo = (event) => {
         event.preventDefault();
         if (event.code.includes('Digit') && (!event.shiftKey)) {
@@ -75,7 +79,6 @@ export default class FirstScreen {
       };
 
       if (birthday.includes(dataName)) {
-        input.placeholder = 'мм/дд/гг';
         input.addEventListener('keypress', addMaskTo);
       }
 

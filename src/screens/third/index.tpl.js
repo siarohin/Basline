@@ -1,7 +1,7 @@
 export default `<section class="content-form">
 
 <div class="content-form__inner content-image">
-  <h2 class="content-form__title">Осталось совсем чуть-чуть</h2>
+  <h2 class="content-form__title">Осталось совсем <nobr>чуть-чуть</nobr></h2>
 </div>
 
 <div class="content-form__inner content-data">
