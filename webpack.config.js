@@ -12,7 +12,7 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
-    path: `${__dirname}/dist`,
+    path: `${__dirname}/build`,
   },
   optimization: {
     minimizer: [
@@ -119,7 +119,7 @@ module.exports = {
   mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
+    contentBase: path.join(__dirname, 'build'),
     compress: true,
     port: 9000,
   },

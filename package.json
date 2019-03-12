@@ -1,6 +1,7 @@
 {
   "name": "baseline",
   "version": "0.0.2",
+  "homepage": "https://siarohin.github.io/basline",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,7 +9,9 @@
     "fix-lint": "eslint -c .eslintrc.js ./src/**/*.js --fix",
     "watch": "webpack --watch",
     "start": "webpack-dev-server --open",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "repository": {
@@ -20,7 +23,6 @@
   "bugs": {
     "url": "https://github.com/siarohin/Basline/issues"
   },
-  "homepage": "https://github.com/siarohin/Basline#readme",
   "devDependencies": {
     "@babel/core": "^7.1.6",
     "@babel/preset-env": "^7.1.6",
@@ -46,6 +48,7 @@
   "dependencies": {
     "es6-promise": "^4.2.5",
     "file-loader": "^2.0.0",
+    "gh-pages": "^2.0.1",
     "image-webpack-loader": "^4.6.0",
     "isomorphic-fetch": "^2.2.1",
     "regenerator-runtime": "^0.11.1",
