@@ -2,6 +2,7 @@ import template from './index.tpl';
 import './index.scss';
 
 import SETTINGS from '../../settings';
+import { getDataFromLocalStorage } from '../../utils';
 
 
 const nameValid = /[^a-zA-Zа-яёА-ЯЁ -]/u;
@@ -29,8 +30,6 @@ const clearErrorBorder = (element) => {
 const addErrorBorder = (element) => {
   element.classList.add('error-value');
 };
-
-const getDataFromLocalStorage = () => JSON.parse(localStorage.getItem('user-data'));
 
 
 export default (element, dataName) => {
