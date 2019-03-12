@@ -6,14 +6,8 @@ import SETTINGS from '../../settings';
 import SecondScreen from '../second';
 import isValidate from '../../components/validation';
 import pseudoPlaceholder from '../../components/placeholder';
+import { getDataFromLocalStorage, saveDataToLocalStorage } from '../../utils';
 
-
-const getDataFromLocalStorage = () => JSON.parse(localStorage.getItem('user-data'));
-
-const saveDataToLocalStorage = (field, value) => {
-  const userData = Object.assign({}, getDataFromLocalStorage(), { [field]: value });
-  localStorage.setItem('user-data', JSON.stringify(userData));
-};
 
 export default class FirstScreen {
   static init() {

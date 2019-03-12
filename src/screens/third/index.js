@@ -4,20 +4,8 @@ import './index.scss';
 // eslint-disable-next-line import/no-cycle
 import startApp from '../../index';
 import isValidate from '../../components/validation';
-import pause from '../../utils';
 import pseudoPlaceholder from '../../components/placeholder';
-
-
-const getDataFromLocalStorage = () => JSON.parse(localStorage.getItem('user-data'));
-
-const saveDataToLocalStorage = (field, value) => {
-  const userData = Object.assign({}, getDataFromLocalStorage(), { [field]: value });
-  localStorage.setItem('user-data', JSON.stringify(userData));
-};
-
-const removeDataFromLocalStorage = () => {
-  localStorage.removeItem('user-data');
-};
+import { pause, getDataFromLocalStorage, saveDataToLocalStorage, removeDataFromLocalStorage } from '../../utils';
 
 
 export default class ThirdScreen {
