@@ -1,3 +1,3 @@
 ## Demo
 
-https://siarohin.github.io/Basline/dist/
+https://siarohin.github.io/basline/
